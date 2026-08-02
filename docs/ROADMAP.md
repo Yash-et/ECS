@@ -114,3 +114,28 @@
 - Precision selector
 - Better exception handling
 - Expression validation
+
+---
+---
+
+## 🚧 Scientific Calculator v2
+
+### Completed
+
+- Interactive keypad
+- Precision selector
+- Session state management
+- Scientific functions
+- Expression editor
+- Backspace
+- Clear
+- Unit tests
+
+### Upcoming
+
+- Memory functions
+- Degree/Radian implementation
+- Keyboard shortcuts
+- Calculation history
+- Expression validation
+- Dark/Light theme switch

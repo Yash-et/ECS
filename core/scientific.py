@@ -21,9 +21,29 @@ class ScientificEngine:
         + (implicit_multiplication_application,)
     )
 
+    from sympy import (
+    E,
+    pi,
+    sin,
+    cos,
+    tan,
+    sqrt,
+    log,
+    exp,
+    factorial,
+    )
+
     LOCAL_DICT = {
         "pi": pi,
         "e": E,
+        "sin": sin,
+        "cos": cos,
+        "tan": tan,
+        "sqrt": sqrt,
+        "log": log,
+        "ln": log,
+        "exp": exp,
+        "factorial": factorial,
     }
 
     @classmethod
