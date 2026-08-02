@@ -88,3 +88,29 @@
 - [ ] Equation explanation
 - [ ] OCR
 - [ ] Natural language calculations
+
+---
+---
+
+## 📌 Completed Milestone 2 (Scientific Engine v1)
+
+### Completed
+
+- Basic expression parser
+- Symbol replacement (`×`, `÷`, `^`)
+- SymPy integration
+- Expression evaluation
+- Scientific calculator page
+- Unit tests
+- Git integration
+- Project roadmap
+
+### Next Sprint
+
+- Scientific keypad UI
+- Degree/Radian mode
+- Memory functions (M+, M-, MR, MC)
+- Calculation history (SQLite)
+- Precision selector
+- Better exception handling
+- Expression validation
