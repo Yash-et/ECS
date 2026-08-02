@@ -5,7 +5,9 @@ from services.session_service import SessionService
 from components.keypad import draw_keypad
 from services.history_service import HistoryService
 SessionService.initialize()
-
+if "result" not in st.session_state:
+    st.session_state.result = None
+    
 st.title("🧮 Scientific Calculator")
 
 col1, col2 = st.columns([4, 1])
@@ -55,7 +57,11 @@ with col1:
                     result,
                     st.session_state.precision,
                 )
-
+            st.session_state.result = result
+            HistoryService.save(
+                st.session_state.expression,
+                result,
+            )
             st.success(result)
 
         except Exception as e:
@@ -91,14 +97,20 @@ m1,m2,m3,m4 = st.columns(4)
 with m1:
 
     if st.button("M+"):
-
-        st.session_state.memory += float(result)
+        if st.session_state.result is not None:
+            st.session_state.memory += float(st.session_state.result)
+        else:
+            st.warning("No result available.")
 
 with m2:
 
     if st.button("M-"):
+        if st.session_state.result is not None:
+            st.session_state.memory -= float(st.session_state.result)
+        else:
+            st.warning("No result available.")
 
-        st.session_state.memory -= float(result)
+        #st.session_state.memory -= float(result)
 
 with m3:
 

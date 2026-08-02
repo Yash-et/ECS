@@ -4,33 +4,54 @@ Expression parser for the Engineering Calculator Suite.
 
 from __future__ import annotations
 
+import re
+
 
 class ExpressionParser:
-    """Preprocess mathematical expressions before evaluation."""
+    """
+    Preprocess and validate mathematical expressions
+    before SymPy evaluation.
+    """
 
     REPLACEMENTS = {
         "×": "*",
         "÷": "/",
         "^": "**",
     }
-    FORBIDDEN = [
-        "__",
-        "import",
-        "exec",
-        "eval",
-        "lambda",
-        "os",
-        "sys",
-        "subprocess",
-    ]
+
+    # Allows:
+    # numbers
+    # letters (function names: sin, cos, sqrt, etc.)
+    # operators
+    # brackets
+    # decimal points
+    # spaces
+    ALLOWED_PATTERN = re.compile(
+        r"^[0-9a-zA-Z_+\-*/().,%! ]+$"
+    )
+
     @classmethod
     def preprocess(cls, expression: str) -> str:
+        """
+        Normalize and validate expression.
+        """
+
+        if not isinstance(expression, str):
+            raise TypeError("Expression must be a string.")
+
         expression = expression.strip()
 
+        if not expression:
+            raise ValueError("Expression cannot be empty.")
+
+        # Replace calculator symbols
         for old, new in cls.REPLACEMENTS.items():
             expression = expression.replace(old, new)
-            
-        for word in cls.FORBIDDEN:
-            if word in expression:
-                raise ValueError(f"Illegal token: {word}")
-        return expression        
+
+        # Security validation
+        if not cls.ALLOWED_PATTERN.fullmatch(expression):
+            raise ValueError(
+                "Expression contains invalid characters."
+            )
+
+        return expression
