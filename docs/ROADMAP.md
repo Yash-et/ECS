@@ -139,3 +139,27 @@
 - Calculation history
 - Expression validation
 - Dark/Light theme switch
+
+---
+
+## ✅ Milestone 3 - Scientific Calculator v2
+
+### Completed
+
+- Expression parser
+- Scientific evaluation engine
+- Session state management
+- Scientific keypad
+- Precision selector
+- Memory operations (M+, M-, MR, MC)
+- SQLite calculation history
+- CSV export
+- Input validation
+- Unit tests (11 passing)
+- Scientific engine optimization
+
+### Status
+
+🟢 Stable
+
+Ready for Scientific Calculator v3.
