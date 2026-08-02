@@ -163,3 +163,35 @@
 🟢 Stable
 
 Ready for Scientific Calculator v3.
+
+---
+---
+
+# ✅ Module Completed
+
+## Scientific Calculator
+
+Status: Stable
+
+Version: v1.0
+
+---
+
+## Graphing Calculator
+
+Status: Stable
+
+Version: v1.0
+
+Features
+
+- Expression plotting
+- Multiple functions
+- Interactive graphs
+- Themes
+- CSV export
+- Saved configurations
+- Plot customization
+- Unit tested
+
+15 Tests Passing

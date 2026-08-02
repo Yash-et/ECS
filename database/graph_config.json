@@ -1,0 +1,15 @@
+{
+    "functions": [
+        "sin(x)",
+        "cos(x)",
+        "tan(x)"
+    ],
+    "xmin": -90.0,
+    "xmax": 10.0,
+    "settings": {
+        "theme": "plotly_dark",
+        "line_style": "solid",
+        "line_width": 2,
+        "show_grid": true
+    }
+}
