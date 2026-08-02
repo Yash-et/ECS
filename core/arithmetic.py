@@ -1,0 +1,28 @@
+"""
+Basic arithmetic operations.
+
+This module contains the fundamental arithmetic engine
+used throughout the Engineering Calculator Suite.
+"""
+
+
+class ArithmeticEngine:
+    """Provides basic arithmetic operations."""
+
+    @staticmethod
+    def add(a: float, b: float) -> float:
+        return a + b
+
+    @staticmethod
+    def subtract(a: float, b: float) -> float:
+        return a - b
+
+    @staticmethod
+    def multiply(a: float, b: float) -> float:
+        return a * b
+
+    @staticmethod
+    def divide(a: float, b: float) -> float:
+        if b == 0:
+            raise ZeroDivisionError("Division by zero is not allowed.")
+        return a / b
