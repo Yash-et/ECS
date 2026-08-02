@@ -28,7 +28,6 @@ class ScientificEngine:
 
     @classmethod
     def evaluate(cls, expression: str):
-
         expression = ExpressionParser.preprocess(expression)
 
         expr = parse_expr(
@@ -38,4 +37,9 @@ class ScientificEngine:
             evaluate=True,
         )
 
-        return expr.evalf()
+        if expr.is_Integer:
+            return int(expr)
+        if expr.is_Rational:
+            return float(expr)
+    
+        return float(expr.evalf())
