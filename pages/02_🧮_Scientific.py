@@ -3,7 +3,7 @@ import streamlit as st
 from core.scientific import ScientificEngine
 from services.session_service import SessionService
 from components.keypad import draw_keypad
-
+from services.history_service import HistoryService
 SessionService.initialize()
 
 st.title("🧮 Scientific Calculator")
@@ -45,7 +45,10 @@ with col1:
             result = ScientificEngine.evaluate(
                 st.session_state.expression
             )
-
+            HistoryService.save(
+                st.session_state.expression,
+                result,
+            )
             if isinstance(result, float):
 
                 result = round(
@@ -82,3 +85,33 @@ with col4:
     if st.button("Copy", use_container_width=True):
 
         st.info("Copy feature coming soon.")
+
+m1,m2,m3,m4 = st.columns(4)
+
+with m1:
+
+    if st.button("M+"):
+
+        st.session_state.memory += float(result)
+
+with m2:
+
+    if st.button("M-"):
+
+        st.session_state.memory -= float(result)
+
+with m3:
+
+    if st.button("MR"):
+
+        st.session_state.expression += str(
+            st.session_state.memory
+        )
+
+        st.rerun()
+
+with m4:
+
+    if st.button("MC"):
+
+        st.session_state.memory = 0.0
