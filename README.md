@@ -9,3 +9,5 @@ A Streamlit based software which performs functions more than a calculator and a
 [Update (Oct 8): Working on different project, but github commits are accounted in that repos. This will soon be resumed.]
 
 [Working screenshots are in progress, again commit history issues..]
+
+[Today existing work screenshots will be updated]
